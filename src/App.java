@@ -51,8 +51,36 @@ public class App {
             }
         }
 
-        Par<Integer, String> parPersona1 = new Par<>();
-        
+        Par<Integer, String>[] menores = new Par[personasMenores];
+
+        int indice = 0;
+        int aux = 0;
+        for (int i = 0; i < personas.length; i++) {
+            if (personas[i].getEdad() < 18) {
+                menores[indice] = new Par<>(personas[i].getEdad(), personas[i].getNombre());
+                indice++;
+            }
+        }
+
+        Par<Integer, String>[] mayores = new Par[personasMayores];
+
+        for (int i = 0; i < personas.length; i++) {
+            if (personas[i].getEdad() >= 18) {
+                mayores[aux] = new Par<>(personas[i].getEdad(), personas[i].getNombre());
+                aux++;
+            }
+        }
+
+        System.out.println("Personas menores de edad:");
+        for (Par<Integer, String> par : menores) {
+        System.out.println("Nombre: " + par.getValor() + ", Edad: " + par.getClave());
+        }
+
+        System.out.println("\nPersonas mayores de edad:");
+        for (Par<Integer, String> par : mayores) {
+            System.out.println("Nombre: " + par.getClave() + ", Edad: " + par.getValor());
+        }
+
 
     }
 }

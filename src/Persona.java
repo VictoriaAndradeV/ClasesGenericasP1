@@ -27,5 +27,14 @@ public class Persona {
         this.nombre = nombre;
     }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Persona");
+        sb.append("nombre = ").append(nombre);
+        sb.append(", edad = ").append(edad);
+        return sb.toString();
+    }
+
 
 }
